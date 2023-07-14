@@ -1,0 +1,5 @@
+#no subir la carpeta .vscode
+.vscode/
+
+#el backup de los estilos del proy02
+css/styles.css.bak

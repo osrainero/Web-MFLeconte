@@ -1,0 +1,5 @@
+@mixin post-ul($fntfm, $color, $mg) {
+  font-family: $fntfm;
+  color: $color;
+  margin-left: $mg;
+}

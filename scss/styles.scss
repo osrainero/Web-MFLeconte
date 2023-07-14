@@ -1,0 +1,187 @@
+@import "./base/vars";
+@import "./base/maps";
+@import "./base/extend";
+@import "./base/mixin";
+@import "./componentes/navbar";
+@import "./componentes/footer";
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+html {
+  min-height: 100%;
+}
+body {
+  margin: map-get($bdy, mgn);
+  height: map-get($bdy, hght);
+  background: map-get($bdy, bckgnd);
+  background: radial-gradient(circle, $degr-ini 62%, $degr-end 100%);
+}
+a {
+  text-decoration: none;
+}
+
+/* CONTENIDO */
+.imagen-gigante {
+  padding: 0px;
+}
+.max-mio {
+  max-height: 82vh;
+  object-fit: cover;
+}
+
+.logo-home {
+  margin-top: 8vh;
+  text-align: center;
+  h1 {
+    @extend %ttl;
+    color: $lg-h1;
+  }
+  h2 {
+    @extend %ttl;
+    color: $lg-h2;
+  }
+}
+@media only screen and (min-width: 670px) and (max-width: 1100px) {
+  .logo-home h1 {
+    font-size: calc(1.2em + 2vw);
+  }
+  .logo-home h2 {
+    font-size: calc(1.2em + 1.6vw);
+  }
+}
+@media only screen and (min-width: 1101px) {
+  .logo-home h1 {
+    font-size: calc(1.6em + 2vw);
+  }
+  .logo-home h2 {
+    font-size: calc(1.2em + 1.6vw);
+  }
+}
+.contenido-mio {
+  margin-top: 3vh;
+  h2 {
+    color: $h2-cntnd;
+    margin-bottom: 2vh;
+  }
+  h3 {
+    color: $h3-cntnd;
+    margin-bottom: 1.7vh;
+  }
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $fnt-ppl;
+  }
+  article {
+    margin-bottom: 12px;
+    &:hover {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(0deg, $degr-ini-pst 15%, $degr-end-pst 50%);
+      -webkit-border-bottom-right-radius: 20px;
+      -webkit-border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      a {
+        font-weight: 400;
+      }
+    }
+    h3 {
+      color: $h3-cntnd;
+      margin-bottom: 1.7vh;
+    }
+    p {
+      font-family: $fnt-scnd;
+      font-weight: 300;
+
+      a {
+        padding-left: 2px;
+        padding-right: 2px;
+        color: #029a48;
+        text-decoration: underline dotted 1px;
+        &:hover {
+          color: white;
+          background-color: #45524a;
+          border-radius: 7px 7px 7px 7px;
+        }
+        &:hover::after {
+          content: " →";
+        }
+      }
+    }
+    ul {
+      @include post-ul($fnt-thrd, $cnt-a, 3px);
+    }
+    .img-post-mio {
+      margin: 2px;
+    }
+  }
+  .foto-mf {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+  }
+  .caja-cont-mio {
+    .icon-contac-mio {
+      margin-top: 2vh;
+      margin-bottom: 1vh;
+      text-transform: uppercase;
+      &:hover {
+        transition: transform 0.3s ease;
+        opacity: 0.5;
+      }
+    }
+    &:hover {
+      background-color: $fnd-sclr;
+      border-radius: 15px;
+    }
+    a {
+      color: $cnt-a;
+      font-weight: 500;
+      &:hover {
+        transition: all 0.3s ease;
+        color: white;
+        background-color: $cnt-ahvr;
+        border-radius: 5px;
+      }
+    }
+  }
+  .form-mio {
+    margin-bottom: 2vh;
+  }
+}
+
+.btn-primary-mio {
+  background-color: $cnt-btn;
+  color: $cnt-ahvr;
+  border: none;
+  &:hover {
+    background-color: $cnt-ahvr;
+    color: white;
+  }
+}
+
+.porfolio-mio {
+  margin-bottom: 5vh;
+  .card-mio:hover {
+    -webkit-box-shadow: 0px 2px 15px 5px rgba(138, 138, 138, 0.4);
+    -moz-box-shadow: 0px 2px 15px 5px rgba(138, 138, 138, 0.4);
+    box-shadow: 0px 2px 15px 5px rgba(138, 138, 138, 0.4);
+  }
+  .card-mio:not(:hover) {
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.card-img-top-mio {
+  filter: blur(4px);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  &:hover {
+    transition: filter 0.5s ease-in-out;
+    filter: none;
+  }
+}
